@@ -1966,6 +1966,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 488808, guid: 22e8e9479d52a604abc938e32f8c8873, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 488808, guid: 22e8e9479d52a604abc938e32f8c8873, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 36.19
+      objectReference: {fileID: 0}
+    - target: {fileID: 488808, guid: 22e8e9479d52a604abc938e32f8c8873, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.85
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22e8e9479d52a604abc938e32f8c8873, type: 3}
 --- !u!1 &96568027 stripped
@@ -2234,6 +2246,7 @@ GameObject:
   - component: {fileID: 1613294477}
   - component: {fileID: 1613294476}
   - component: {fileID: 1613294475}
+  - component: {fileID: 1613294479}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -2283,7 +2296,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7a9cd7e975a2f514e9a9bf1d210c8c27, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2328,6 +2341,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1613294479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613294474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c24b6491f31550341b5d03e9c1a77f08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaypointNetwork: {fileID: 1064412559}
+  CurrentIndex: 0
 --- !u!1 &1714847077
 GameObject:
   m_ObjectHideFlags: 0
