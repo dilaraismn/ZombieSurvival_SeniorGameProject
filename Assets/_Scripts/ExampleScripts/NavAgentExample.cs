@@ -53,7 +53,7 @@ public class NavAgentExample : MonoBehaviour
 
       if (_navAgent.isOnOffMeshLink)
       {
-         StartCoroutine(Jump(1));
+         StartCoroutine(Jump(1 ));
          return;
       }
       

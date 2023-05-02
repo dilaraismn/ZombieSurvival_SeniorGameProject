@@ -11,6 +11,7 @@
           <e p="AIWaypointNetwork.cs" t="Include" />
           <e p="ExampleScripts" t="Include">
             <e p="NavAgentExample.cs" t="Include" />
+            <e p="SlidingDoorDemo.cs" t="Include" />
           </e>
         </e>
         <e p="Editor" t="Include">
