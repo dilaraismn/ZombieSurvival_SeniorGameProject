@@ -8,11 +8,12 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="_Scripts" t="Include">
-          <e p="AIWaypointNetwork.cs" t="Include" />
-          <e p="ExampleScripts" t="Include">
+          <e p="NavMeshExampleScripts" t="Include">
+            <e p="AIWaypointNetwork.cs" t="Include" />
             <e p="NavAgentExample.cs" t="Include" />
             <e p="SlidingDoorDemo.cs" t="Include" />
           </e>
+          <e p="Test.cs" t="Include" />
         </e>
         <e p="Editor" t="Include">
           <e p="AIWaypointNetworkEditor.cs" t="Include" />
@@ -128,6 +129,15 @@
               <e p="Blend SM2.shader" t="Include" />
               <e p="Blend SM3.shader" t="Include" />
             </e>
+          </e>
+        </e>
+        <e p="StudioNewPunch" t="Include">
+          <e p="Zombies" t="Include">
+            <e p="Common" t="Include">
+              <e p="jiggleBones.cs" t="Include" />
+              <e p="maxCamera.cs" t="Include" />
+            </e>
+            <e p="ReadMe.txt" t="Include" />
           </e>
         </e>
       </e>
