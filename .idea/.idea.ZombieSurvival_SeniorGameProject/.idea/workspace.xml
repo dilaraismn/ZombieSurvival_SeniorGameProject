@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62b1db1d-43cd-4592-8745-6b9c3d99eb8b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ZombieSurvival_SeniorGameProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZombieSurvival_SeniorGameProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/IndieGameModels/Animated Modern Weapons + Arms (SMGs and Assaults)+ SFX/Assault16/Materials/Assault16_D.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IndieGameModels/Animated Modern Weapons + Arms (SMGs and Assaults)+ SFX/Assault16/Materials/Assault16_D.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/GameScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +19,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Zombie.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/AIWaypointNetworkEditor.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -82,7 +87,7 @@
       <workItem from="1681851571607" duration="2653000" />
       <workItem from="1683025406745" duration="3907000" />
       <workItem from="1683492195981" duration="58000" />
-      <workItem from="1683723063531" duration="799000" />
+      <workItem from="1683723063531" duration="3167000" />
     </task>
     <servers />
   </component>
@@ -92,6 +97,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
