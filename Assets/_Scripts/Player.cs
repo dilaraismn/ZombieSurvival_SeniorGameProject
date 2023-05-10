@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float shootRate = 0.2f;
     [SerializeField] private float shootForce = 2000;
-    [SerializeField] private GameObject bulletPref;
+    [SerializeField] private GameObject bulletPref, muzzleVFX;
     [SerializeField] private Transform bulletPoint;
 
     public bool canShoot = true; //TODO
@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
+        Instantiate(muzzleVFX, bulletPoint.transform.position, Quaternion.identity);
         GameObject bullet = Instantiate(bulletPref, bulletPoint.transform.position, bulletPref.transform.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
         //TODO: AudioSource.PlayClipAtPoint(shootSound, transform.position); 

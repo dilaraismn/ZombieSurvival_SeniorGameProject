@@ -7,7 +7,10 @@
     <list default="true" id="62b1db1d-43cd-4592-8745-6b9c3d99eb8b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.ZombieSurvival_SeniorGameProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZombieSurvival_SeniorGameProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Scenes/GameScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scenes/GameScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Zombie.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Zombie.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/___www.unityassetcollection.com___.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/___www.unityassetcollection.com___.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/___www.unityassetcollection.com___.txt.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/___www.unityassetcollection.com___.txt.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +91,7 @@
       <workItem from="1683025406745" duration="3907000" />
       <workItem from="1683492195981" duration="58000" />
       <workItem from="1683723063531" duration="3637000" />
-      <workItem from="1683734929095" duration="4894000" />
+      <workItem from="1683734929095" duration="6643000" />
     </task>
     <servers />
   </component>
