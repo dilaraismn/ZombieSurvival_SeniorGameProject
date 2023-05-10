@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 11323
+  controlID: 12629
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 11324
+  controlID: 12630
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 11325
+  controlID: 12607
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -226,7 +226,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: da28fffff628ffff1429ffff2e29ffff3e29ffff6a3bffff24fbffff
+      m_ExpandedIDs: 24fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -768,8 +768,8 @@ MonoBehaviour:
     y: 510
     width: 999.3333
     height: 317.3333
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -817,22 +817,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Knife/PRO Effects FPS Muzzle flashes & Impacts/SimpleController/Scripts
+    - Assets/_Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Knife/PRO Effects FPS Muzzle flashes & Impacts/SimpleController/Scripts
+  - Assets/_Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\UnityProjects\ZombieSurvival_SeniorGameProject
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 427.6667}
-    m_SelectedIDs: 664a0700
-    m_LastClickedID: 477798
-    m_ExpandedIDs: 00000000181d01001a1d01001c1d01001e1d0100201d0100221d0100241d0100261d0100281d01002a1d01002c1d01002e1d0100301d0100321d0100321e0100
+    scrollPos: {x: 0, y: 175}
+    m_SelectedIDs: 201d0100
+    m_LastClickedID: 72992
+    m_ExpandedIDs: 00000000181d01001a1d01001c1d01001e1d0100201d0100221d0100241d0100261d0100281d01002a1d01002c1d01002e1d0100301d0100321d0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -885,8 +885,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: da28ffff
-    m_LastClickedInstanceID: -55078
+    m_SelectedInstanceIDs: a0b20000
+    m_LastClickedInstanceID: 45728
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300008cb700007a6c12006c670100ee6b0100806d0100e0550700
     m_RenameOverlay:
@@ -912,7 +912,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 50.666687}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     m_CachedPref: 337
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -55078
+  m_LastInspectedObjectInstanceID: 45728
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
