@@ -159,7 +159,7 @@ namespace Knife.Effects.SimpleController
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            //control.SetActive(true);
+            control.SetActive(true); //TODO
             Freeze(true);
             isPaused = true;
         }
@@ -168,7 +168,7 @@ namespace Knife.Effects.SimpleController
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            //control.SetActive(false);
+            control.SetActive(false); //TODO
             Freeze(false);
             isPaused = false;
         }

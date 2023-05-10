@@ -120,8 +120,8 @@ namespace Knife.Effects.SimpleController
             }
 
             playerController.Freeze(true);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.None;
         }
 
         /// <summary>
@@ -167,8 +167,8 @@ namespace Knife.Effects.SimpleController
                 o.SetActive(true);
             }
             playerController.Freeze(false);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
         }
 
         private void Update()
