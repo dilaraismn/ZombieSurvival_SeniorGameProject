@@ -1969,6 +1969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65696ecd149dee5468d7c8b5e1d88659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerObj: {fileID: 0}
   zombieHealth: 100
   bulletDamage: 25
 --- !u!1 &7939841279686244185

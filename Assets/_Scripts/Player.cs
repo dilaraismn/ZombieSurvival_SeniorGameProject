@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float shootRate = 0.2f;
-    [SerializeField] private float shootForce = 1000;
+    [SerializeField] private float shootForce = 2000;
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private Transform bulletPoint;
 

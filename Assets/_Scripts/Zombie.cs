@@ -2,22 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+using UnityEngine.AI;
 
 public class Zombie : MonoBehaviour
 {
+    [SerializeField] private Transform playerObj;
     [SerializeField] private int zombieHealth = 100;
     [SerializeField] private int bulletDamage = 25;
 
     private Animator animator;
+    private NavAgentExample navAgentScript;
+    private NavMeshAgent navAgent;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        navAgent = GetComponent<NavMeshAgent>();
+        navAgentScript = GetComponent<NavAgentExample>();
     }
     
     private void TakeDamage()
     {
-        print("KURŞUN YEDİM");
+        navAgentScript.enabled = false;
+        navAgent.SetDestination(playerObj.position);
+
         zombieHealth -= bulletDamage;
         
         if (zombieHealth <= 0)
@@ -26,14 +35,12 @@ public class Zombie : MonoBehaviour
         }
         else
         {
-            animator.Play("TakeDamage");
+            animator.Play("TakeHit");
         }
     }
     
     private void Die()
     {
-        print("zombie is dead");
-        Destroy(this.gameObject);
         animator.Play("Die");
     }
     
