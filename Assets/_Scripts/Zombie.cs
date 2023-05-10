@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class Zombie : MonoBehaviour
 {
     [SerializeField] private Transform playerObj;
+    [SerializeField] private GameObject bloodVFX;
     [SerializeField] private int zombieHealth = 100;
     [SerializeField] private int bulletDamage = 25;
 
@@ -24,18 +25,19 @@ public class Zombie : MonoBehaviour
     
     private void TakeDamage()
     {
-        navAgentScript.enabled = false;
-        navAgent.SetDestination(playerObj.position);
-
         zombieHealth -= bulletDamage;
-        
+        navAgentScript.enabled = false;
+
         if (zombieHealth <= 0)
         {
             Die();
+            navAgent.isStopped = true;
         }
         else
         {
             animator.Play("TakeHit");
+            navAgent.ResetPath();
+            navAgent.SetDestination(playerObj.position);
         }
     }
     
@@ -48,6 +50,7 @@ public class Zombie : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
+            Instantiate(bloodVFX, other.transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             TakeDamage();
         }
