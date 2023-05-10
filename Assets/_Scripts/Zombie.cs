@@ -8,18 +8,33 @@ public class Zombie : MonoBehaviour
     [SerializeField] private int zombieHealth = 100;
     [SerializeField] private int bulletDamage = 25;
 
-    private void Update()
+    private Animator animator;
+
+    private void Awake()
     {
+        animator = GetComponent<Animator>();
+    }
+    
+    private void TakeDamage()
+    {
+        print("KURŞUN YEDİM");
+        zombieHealth -= bulletDamage;
+        
         if (zombieHealth <= 0)
         {
             Die();
         }
+        else
+        {
+            animator.Play("TakeDamage");
+        }
     }
-
+    
     private void Die()
     {
         print("zombie is dead");
         Destroy(this.gameObject);
+        animator.Play("Die");
     }
     
     private void OnTriggerEnter(Collider other)
@@ -27,9 +42,7 @@ public class Zombie : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             Destroy(other.gameObject);
-            print("KURŞUN YEDİM");
-            zombieHealth -= bulletDamage;
-            print($"zombie health: {zombieHealth}");
+            TakeDamage();
         }
     }
 }
