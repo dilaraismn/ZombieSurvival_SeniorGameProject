@@ -19,7 +19,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Zombie.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Editor/AIWaypointNetworkEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/Player.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -31,6 +30,7 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/ExampleScripts/NavAgentExample.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/ExampleScripts/SlidingDoorDemo.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Test.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/Player.cs" />
       </list>
     </option>
   </component>
@@ -58,9 +58,8 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -68,9 +67,8 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="projectPathOnTarget" />
       <option name="selectedOptions">
-        <list />
+        <set />
       </option>
       <method v="2" />
     </configuration>
@@ -90,6 +88,7 @@
       <workItem from="1683723063531" duration="3637000" />
       <workItem from="1683734929095" duration="6643000" />
       <workItem from="1683755532091" duration="2596000" />
+      <workItem from="1683788181818" duration="157000" />
     </task>
     <servers />
   </component>

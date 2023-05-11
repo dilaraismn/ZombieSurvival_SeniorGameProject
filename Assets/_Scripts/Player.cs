@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         {
             Vector3 direction = (hit.point - transform.position).normalized;
 
-            GameObject bullet = Instantiate(bulletPref, bulletPoint.transform.position, Quaternion.identity);
+            GameObject bullet = Instantiate(bulletPref, bulletPoint.transform.position, Quaternion.LookRotation(direction));
             bullet.GetComponent<Rigidbody>().AddForce(direction * shootForce, ForceMode.Impulse);
         }
         
