@@ -10,6 +10,7 @@ TagManager:
   - BigHealthKit
   - SmallBulletBox
   - BigBulletBox
+  - Chest
   layers:
   - Default
   - TransparentFX

@@ -21,6 +21,10 @@ public class Player : MonoBehaviour
     [SerializeField] private TMP_Text healthText;
 
     [SerializeField] private GameObject healthFullWarning;
+    [SerializeField] private GameObject antidoteTakenMessage, antidoteIcon;
+    [SerializeField] private GameObject questUI, quest1, quest2;
+
+    [SerializeField] private GameObject chestOpen, chestClosed;
         
     [SerializeField] private Camera playerCamera;
     
@@ -42,6 +46,10 @@ public class Player : MonoBehaviour
     {
         BulletCountControl();
         HealthControl();
+        
+        //TODO
+        questUI.SetActive(true);
+        quest1.SetActive(true);
     }
 
     void Update()
@@ -123,6 +131,17 @@ public class Player : MonoBehaviour
                 Destroy(raycastHit.transform.gameObject);
                 bulletCount += 80;
                 BulletCountControl();
+            }
+            
+            if (raycastHit.transform.tag == "Chest")
+            {
+                chestClosed.SetActive(false);
+                chestOpen.SetActive(true);
+                antidoteTakenMessage.SetActive(true);
+                antidoteIcon.SetActive(true);
+                quest1.SetActive(false);
+                quest2.SetActive(true);
+                StartCoroutine(CloseObject(antidoteTakenMessage));
             }
         }
     }
