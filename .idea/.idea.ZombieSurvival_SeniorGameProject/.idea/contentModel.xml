@@ -17,6 +17,7 @@
             <e p="NavAgentExample.cs" t="Include" />
             <e p="SlidingDoorDemo.cs" t="Include" />
           </e>
+          <e p="Peter.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="Zombie.cs" t="Include" />
         </e>

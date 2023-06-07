@@ -11,6 +11,7 @@ TagManager:
   - SmallBulletBox
   - BigBulletBox
   - Chest
+  - Peter
   layers:
   - Default
   - TransparentFX

@@ -21,8 +21,8 @@ public class Player : MonoBehaviour
     [SerializeField] private TMP_Text healthText;
 
     [SerializeField] private GameObject healthFullWarning;
-    [SerializeField] private GameObject antidoteTakenMessage, antidoteIcon;
-    [SerializeField] private GameObject questUI, quest1, quest2;
+    [SerializeField] private GameObject antidoteTakenMessage, antidoteIcon, noAntidoteWarning;
+    [SerializeField] private GameObject questUI, quest1, quest2, questCompletedMessage;
 
     [SerializeField] private GameObject chestOpen, chestClosed;
         
@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
     
     public bool canShoot = true; //TODO
     private bool isFlashLightOpen = false;
+    private bool isAntidoteTaken = false;
 
     private void Awake()
     {
@@ -139,9 +140,26 @@ public class Player : MonoBehaviour
                 chestOpen.SetActive(true);
                 antidoteTakenMessage.SetActive(true);
                 antidoteIcon.SetActive(true);
+                isAntidoteTaken = true;
                 quest1.SetActive(false);
                 quest2.SetActive(true);
                 StartCoroutine(CloseObject(antidoteTakenMessage));
+            }
+            if (raycastHit.transform.tag == "Peter")
+            {
+                if (!isAntidoteTaken)
+                {
+                    noAntidoteWarning.SetActive(true);
+                    Peter.instance.PlayNoAnim();
+                    StartCoroutine(CloseObject(noAntidoteWarning));
+                    return;
+                }
+                antidoteIcon.SetActive(false);
+                quest2.SetActive(false);
+                questUI.SetActive(false);
+                Peter.instance.PlayThankfulAnim();
+                questCompletedMessage.SetActive(true);
+                StartCoroutine(CloseObject(questCompletedMessage));
             }
         }
     }
