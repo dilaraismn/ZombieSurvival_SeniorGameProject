@@ -51,7 +51,8 @@ public class Player : MonoBehaviour
         
         if (Physics.Raycast(ray, out hit))
         {
-            Vector3 direction = (hit.point - transform.position).normalized;
+            Vector3 direction = (hit.point - transform.position);
+            //Vector3 direction = hit.point.normalized;
 
             GameObject bullet = Instantiate(bulletPref, bulletPoint.transform.position, Quaternion.LookRotation(direction));
             bullet.GetComponent<Rigidbody>().AddForce(direction * shootForce, ForceMode.Impulse);
