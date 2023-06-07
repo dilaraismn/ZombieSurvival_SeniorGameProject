@@ -3,23 +3,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
+    public static Player instance;
+    
     [SerializeField] private float shootRate = 0.2f;
     [SerializeField] private float shootForce;
     [SerializeField] private GameObject flashLight;
+    
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private Transform bulletPoint;
-    [SerializeField] private Camera playerCamera;
     [SerializeField] private TMP_Text bulletCountText;
-    private int bulletCount = 50;
+
+    [SerializeField] private Image healthBar;
+    [SerializeField] private TMP_Text healthText;
+
+    [SerializeField] private Camera playerCamera;
+    
+    public int bulletCount = 50;
+    public float playerHealth = 100;
+    
     public bool canShoot = true; //TODO
     private bool isFlashLightOpen = false;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     private void Start()
     {
-        bulletCountText.text = bulletCount.ToString();
+        BulletCountControl();
+        HealthControl();
     }
 
     void Update()
@@ -33,7 +53,6 @@ public class Player : MonoBehaviour
         {
             isFlashLightOpen = !isFlashLightOpen;
             flashLight.SetActive(isFlashLightOpen);
-            print(isFlashLightOpen);
         }
     }
 
@@ -58,13 +77,9 @@ public class Player : MonoBehaviour
             bullet.GetComponent<Rigidbody>().AddForce(direction * shootForce, ForceMode.Impulse);
            
             bulletCount -= 1;
-            bulletCountText.text = bulletCount.ToString();
+            BulletCountControl();
         }
         
-        //GameObject bullet = Instantiate(bulletPref, bulletPoint.transform.position, bulletPref.transform.rotation);
-        //bullet.GetComponent<Rigidbody>().AddForce(transform.forward * shootForce);
-        //TODO: AudioSource.PlayClipAtPoint(shootSound, transform.position); 
-
         canShoot = false;
         Invoke("EnableShooting", shootRate);
     }
@@ -72,5 +87,22 @@ public class Player : MonoBehaviour
     private void EnableShooting()
     {
         canShoot = true;
+    }
+
+    private void BulletCountControl()
+    {
+        bulletCountText.text = bulletCount.ToString();
+    }
+
+    private void HealthControl()
+    {
+        healthBar.fillAmount = playerHealth / 100;
+        healthText.text = playerHealth.ToString();
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        playerHealth -= damageAmount;
+        HealthControl();
     }
 }
