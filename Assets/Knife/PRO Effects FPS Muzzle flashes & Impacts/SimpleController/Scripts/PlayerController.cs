@@ -12,7 +12,7 @@ namespace Knife.Effects.SimpleController
     [RequireComponent(typeof(CapsuleCollider))]
     public class PlayerController : MonoBehaviour
     {
-        public GameObject control;
+        //public GameObject control;
 
         public MouseLook Look;
         public Headbob HeadBob;
@@ -147,7 +147,7 @@ namespace Knife.Effects.SimpleController
 
             controlCameraPosition = ControlCamera.localPosition;
 
-            PausePlayer();
+            //PausePlayer();
         }
 
         public void UpdateDefaultDeath()
@@ -159,7 +159,7 @@ namespace Knife.Effects.SimpleController
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            control.SetActive(true); //TODO
+            //control.SetActive(true);
             Freeze(true);
             isPaused = true;
         }
@@ -168,7 +168,7 @@ namespace Knife.Effects.SimpleController
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            control.SetActive(false); //TODO
+            //control.SetActive(false);
             Freeze(false);
             isPaused = false;
         }
