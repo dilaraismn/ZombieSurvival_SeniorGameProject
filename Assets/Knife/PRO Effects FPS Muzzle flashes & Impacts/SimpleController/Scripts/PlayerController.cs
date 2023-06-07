@@ -147,6 +147,7 @@ namespace Knife.Effects.SimpleController
 
             controlCameraPosition = ControlCamera.localPosition;
 
+            UnpausePlayer();
             //PausePlayer();
         }
 

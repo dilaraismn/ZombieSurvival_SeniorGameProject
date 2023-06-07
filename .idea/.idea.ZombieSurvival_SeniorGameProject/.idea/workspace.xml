@@ -35,6 +35,7 @@
         <option value="$PROJECT_DIR$/Assets/_Scripts/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/_Scripts/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Knife/PRO Effects FPS Muzzle flashes &amp; Impacts/SimpleController/Scripts/PlayerController.cs" />
+        <option value="$PROJECT_DIR$/Assets/_Scripts/GameManager.cs" />
       </list>
     </option>
   </component>
@@ -123,5 +124,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1681844176812" />
+    <state x="563" y="253" width="793" height="534" key="find.popup" timestamp="1686150087354">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="563" y="253" width="793" height="534" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1686150087354" />
   </component>
 </project>
