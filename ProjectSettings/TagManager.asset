@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Bullet
+  - GROUND
+  - SmallHealthKit
+  - BigHealthKit
+  - SmallBulletBox
+  - BigBulletBox
   layers:
   - Default
   - TransparentFX

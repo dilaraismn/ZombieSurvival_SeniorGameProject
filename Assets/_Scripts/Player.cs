@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Image healthBar;
     [SerializeField] private TMP_Text healthText;
 
+    [SerializeField] private GameObject healthFullWarning;
+        
     [SerializeField] private Camera playerCamera;
     
     public int bulletCount = 50;
@@ -54,13 +56,83 @@ public class Player : MonoBehaviour
             isFlashLightOpen = !isFlashLightOpen;
             flashLight.SetActive(isFlashLightOpen);
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Interact();
+        }
     }
 
+    private void Interact()
+    {
+        float interactionDistance = 4f;
+            
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit raycastHit, interactionDistance))
+        {
+            if (raycastHit.transform.tag == "SmallHealthKit")
+            {
+                if (playerHealth == 100)
+                {
+                    healthFullWarning.SetActive(true);
+                    StartCoroutine(CloseObject(healthFullWarning));
+                    return;
+                }
+                
+                if (playerHealth > 90)
+                {
+                    playerHealth = 100;
+                }
+                else
+                {
+                    playerHealth += 10;
+                }
+                Destroy(raycastHit.transform.gameObject);
+                HealthControl();
+            }
+            
+            if (raycastHit.transform.tag == "BigHealthKit")
+            {
+                if (playerHealth == 100)
+                {
+                    healthFullWarning.SetActive(true);
+                    StartCoroutine(CloseObject(healthFullWarning));
+                    return;
+                }
+                
+                if (playerHealth > 70)
+                {
+                    playerHealth = 100;
+                }
+                else
+                {
+                    playerHealth += 30;
+                }
+                Destroy(raycastHit.transform.gameObject);
+                HealthControl();
+            }
+            
+            if (raycastHit.transform.tag == "SmallBulletBox")
+            {
+                Destroy(raycastHit.transform.gameObject);
+                bulletCount += 50;
+                BulletCountControl();
+            }
+            
+            if (raycastHit.transform.tag == "BigBulletBox")
+            {
+                Destroy(raycastHit.transform.gameObject);
+                bulletCount += 80;
+                BulletCountControl();
+            }
+        }
+    }
+    
     private void Shoot()
     {
-        if (bulletCount == 0)
+        if (bulletCount <= 0)
         {
             //TODO disabole muzzleflas
+            canShoot = false;
             return;
         }
        
@@ -79,7 +151,6 @@ public class Player : MonoBehaviour
             bulletCount -= 1;
             BulletCountControl();
         }
-        
         canShoot = false;
         Invoke("EnableShooting", shootRate);
     }
@@ -104,5 +175,11 @@ public class Player : MonoBehaviour
     {
         playerHealth -= damageAmount;
         HealthControl();
+    }
+
+    IEnumerator CloseObject(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(2);
+        gameObject.SetActive(false);
     }
 }

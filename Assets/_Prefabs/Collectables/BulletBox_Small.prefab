@@ -259,9 +259,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3426160785859536225}
+  - component: {fileID: 6323559832614847521}
   m_Layer: 0
   m_Name: BulletBox_Small
-  m_TagString: Untagged
+  m_TagString: SmallBulletBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,8 +276,8 @@ Transform:
   m_GameObject: {fileID: 2650363680171474907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 484.6489, y: 40.04386, z: 484.59982}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2.3, y: 2.3, z: 2.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3521073043785141125}
   - {fileID: 5665960343443560741}
@@ -289,6 +290,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6323559832614847521
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2650363680171474907}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27, y: 0.18, z: 0.24}
+  m_Center: {x: 0.025, y: 0.09, z: -0.041}
 --- !u!1 &5116994920288974654
 GameObject:
   m_ObjectHideFlags: 0
