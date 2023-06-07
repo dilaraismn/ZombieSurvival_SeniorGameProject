@@ -15,6 +15,7 @@ public class Zombie : MonoBehaviour
     private Animator animator;
     private NavAgentExample navAgentScript;
     private NavMeshAgent navAgent;
+    private CapsuleCollider collider;
 
     private void Awake()
     {
@@ -44,6 +45,7 @@ public class Zombie : MonoBehaviour
     private void Die()
     {
         animator.Play("Die");
+        collider.enabled = false;
     }
     
     private void OnTriggerEnter(Collider other)

@@ -13,6 +13,7 @@ TagManager:
   - Chest
   - Peter
   - Letter
+  - Zombie
   layers:
   - Default
   - TransparentFX

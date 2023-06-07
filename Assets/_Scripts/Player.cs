@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject healthFullWarning;
     [SerializeField] private GameObject antidoteTakenMessage, antidoteIcon, noAntidoteWarning;
     [SerializeField] private GameObject takeQuest, questUI, quest1, quest2, questCompletedMessage;
+    [SerializeField] private GameObject takeDamageUI;
 
     [SerializeField] private GameObject chestOpen, chestClosed;
         
@@ -79,7 +80,7 @@ public class Player : MonoBehaviour
 
     private void Interact()
     {
-        float interactionDistance = 4f;
+        float interactionDistance = 8f;
             
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit raycastHit, interactionDistance))
         {
@@ -174,7 +175,15 @@ public class Player : MonoBehaviour
             }
         }
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Zombie"))
+        {
+            TakeDamage(5);
+        }
+    }
+
     private void Shoot()
     {
         if (bulletCount <= 0)
@@ -222,7 +231,15 @@ public class Player : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         playerHealth -= damageAmount;
+        takeDamageUI.SetActive(true);
         HealthControl();
+        StartCoroutine(CloseTakeDamageIndicator());
+    }
+    
+    IEnumerator CloseTakeDamageIndicator()
+    {
+        yield return new WaitForSeconds(1f);
+        takeDamageUI.SetActive(false);
     }
 
     IEnumerator CloseObject(GameObject gameObject)
