@@ -7,10 +7,12 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float shootRate = 0.2f;
     [SerializeField] private float shootForce;
+    [SerializeField] private GameObject flashLight;
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private Transform bulletPoint;
     [SerializeField] private Camera playerCamera;
     public bool canShoot = true; //TODO
+    private bool isFlashLightOpen = false;
     
 
     void Update()
@@ -18,6 +20,13 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButton(0) && canShoot)
         {
             Shoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            isFlashLightOpen = !isFlashLightOpen;
+            flashLight.SetActive(isFlashLightOpen);
+            print(isFlashLightOpen);
         }
     }
 
