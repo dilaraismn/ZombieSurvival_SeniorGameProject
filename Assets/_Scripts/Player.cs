@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
@@ -11,9 +12,15 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bulletPref;
     [SerializeField] private Transform bulletPoint;
     [SerializeField] private Camera playerCamera;
+    [SerializeField] private TMP_Text bulletCountText;
+    private int bulletCount = 50;
     public bool canShoot = true; //TODO
     private bool isFlashLightOpen = false;
-    
+
+    private void Start()
+    {
+        bulletCountText.text = bulletCount.ToString();
+    }
 
     void Update()
     {
@@ -32,6 +39,12 @@ public class Player : MonoBehaviour
 
     private void Shoot()
     {
+        if (bulletCount == 0)
+        {
+            //TODO disabole muzzleflas
+            return;
+        }
+       
         Vector3 screenCenter = new Vector3(Screen.width / 2f, Screen.height / 2f, 0f);
         Ray ray = playerCamera.ScreenPointToRay(screenCenter);
         RaycastHit hit;
@@ -42,6 +55,9 @@ public class Player : MonoBehaviour
 
             GameObject bullet = Instantiate(bulletPref, bulletPoint.transform.position, Quaternion.LookRotation(direction));
             bullet.GetComponent<Rigidbody>().AddForce(direction * shootForce, ForceMode.Impulse);
+           
+            bulletCount -= 1;
+            bulletCountText.text = bulletCount.ToString();
         }
         
         //GameObject bullet = Instantiate(bulletPref, bulletPoint.transform.position, bulletPref.transform.rotation);
