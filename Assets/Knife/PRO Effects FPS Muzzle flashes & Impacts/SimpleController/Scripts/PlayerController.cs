@@ -178,6 +178,11 @@ namespace Knife.Effects.SimpleController
         {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                if (Player.instance.isLetter)
+                {
+                    return;
+                }
+                
                 if (isPaused)
                     UnpausePlayer();
                 else

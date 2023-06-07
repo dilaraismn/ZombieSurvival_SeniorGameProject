@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private GameObject healthFullWarning;
     [SerializeField] private GameObject antidoteTakenMessage, antidoteIcon, noAntidoteWarning;
-    [SerializeField] private GameObject questUI, quest1, quest2, questCompletedMessage;
+    [SerializeField] private GameObject takeQuest, questUI, quest1, quest2, questCompletedMessage;
 
     [SerializeField] private GameObject chestOpen, chestClosed;
         
@@ -32,6 +32,7 @@ public class Player : MonoBehaviour
     public float playerHealth = 100;
     
     public bool canShoot = true; //TODO
+    public bool isLetter = false;
     private bool isFlashLightOpen = false;
     private bool isAntidoteTaken = false;
 
@@ -47,10 +48,6 @@ public class Player : MonoBehaviour
     {
         BulletCountControl();
         HealthControl();
-        
-        //TODO
-        questUI.SetActive(true);
-        quest1.SetActive(true);
     }
 
     void Update()
@@ -69,6 +66,14 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             Interact();
+        }
+        
+        if (isLetter && Input.GetKeyDown(KeyCode.Escape))
+        {
+            isLetter = false;
+            takeQuest.SetActive(false);
+            questUI.SetActive(true);
+            quest1.SetActive(true);
         }
     }
 
@@ -132,6 +137,12 @@ public class Player : MonoBehaviour
                 Destroy(raycastHit.transform.gameObject);
                 bulletCount += 80;
                 BulletCountControl();
+            }
+            
+            if (raycastHit.transform.tag == "Letter")
+            {
+                takeQuest.SetActive(true);
+                isLetter = true;
             }
             
             if (raycastHit.transform.tag == "Chest")

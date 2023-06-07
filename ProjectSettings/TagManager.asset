@@ -12,6 +12,7 @@ TagManager:
   - BigBulletBox
   - Chest
   - Peter
+  - Letter
   layers:
   - Default
   - TransparentFX
