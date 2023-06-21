@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
     [Header("AUDIO CLIPS")] 
     [SerializeField] private AudioClip walkSFX;
-    [SerializeField] private AudioClip shootSFX;
+    [SerializeField] private AudioClip shootSFX, healthKitSFX, bulletKitSFX, chestSFX;
     
     public int bulletCount = 50;
     public float playerHealth = 100;
@@ -108,6 +108,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void PlayInteractSFX(AudioClip clipToPlay, float pitchValue)
+    {
+        _audioSource.volume = 2;
+        _audioSource.pitch = pitchValue;
+        _audioSource.PlayOneShot(clipToPlay);
+    }
+    
     private void Interact()
     {
         float interactionDistance = 8f;
@@ -131,6 +138,9 @@ public class Player : MonoBehaviour
                 {
                     playerHealth += 10;
                 }
+
+                PlayInteractSFX(healthKitSFX,1);
+                
                 Destroy(raycastHit.transform.gameObject);
                 HealthControl();
             }
@@ -152,12 +162,17 @@ public class Player : MonoBehaviour
                 {
                     playerHealth += 30;
                 }
+
+                PlayInteractSFX(healthKitSFX,1);
+
                 Destroy(raycastHit.transform.gameObject);
                 HealthControl();
             }
             
             if (raycastHit.transform.tag == "SmallBulletBox")
             {
+                PlayInteractSFX(bulletKitSFX, .8f);
+
                 Destroy(raycastHit.transform.gameObject);
                 bulletCount += 50;
                 BulletCountControl();
@@ -165,6 +180,7 @@ public class Player : MonoBehaviour
             
             if (raycastHit.transform.tag == "BigBulletBox")
             {
+                PlayInteractSFX(bulletKitSFX, .8f);
                 Destroy(raycastHit.transform.gameObject);
                 bulletCount += 80;
                 BulletCountControl();
@@ -178,6 +194,8 @@ public class Player : MonoBehaviour
             
             if (raycastHit.transform.tag == "Chest")
             {
+                PlayInteractSFX(chestSFX, 1);
+
                 chestClosed.SetActive(false);
                 chestOpen.SetActive(true);
                 antidoteTakenMessage.SetActive(true);
