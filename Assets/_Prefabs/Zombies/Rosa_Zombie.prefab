@@ -2427,8 +2427,7 @@ MonoBehaviour:
   bulletDamage: 25
   growl: {fileID: 8300000, guid: 0fc1cf681de93d9489bdb7313a1f6549, type: 3}
   bite: {fileID: 8300000, guid: e99390696cf0441498b2d2175c6e218f, type: 3}
-  run: {fileID: 8300000, guid: 595a686c5b11fbe45ab0b0d112bf65aa, type: 3}
-  getHit: {fileID: 8300000, guid: cd4bb67f8578a0946ab9801cfbff8869, type: 3}
+  getHit: {fileID: 8300000, guid: d9be1057928487e449b42ecd89a56f07, type: 3}
   dead: {fileID: 8300000, guid: 4f18df80a5231bf4dbf607095e57a0c0, type: 3}
 --- !u!82 &421539442841120293
 AudioSource:
@@ -2442,16 +2441,16 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 20
-  DopplerLevel: 0
-  MinDistance: 0
-  MaxDistance: 0.01
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -2486,7 +2485,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.5
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

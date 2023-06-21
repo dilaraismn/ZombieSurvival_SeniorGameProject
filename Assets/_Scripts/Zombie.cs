@@ -11,13 +11,14 @@ public class Zombie : MonoBehaviour
     [SerializeField] private GameObject bloodVFX;
     [SerializeField] private int zombieHealth = 100;
     [SerializeField] private int bulletDamage = 25;
-    [SerializeField] private AudioClip growl, bite, run, getHit, dead;
+    [SerializeField] private AudioClip growl, bite, getHit, dead;
 
     private Animator animator;
     private NavAgentExample navAgentScript;
     private NavMeshAgent navAgent;
     private CapsuleCollider collider;
     private AudioSource audioSource;
+    private GameObject player;
 
     private void Awake()
     {
@@ -26,19 +27,27 @@ public class Zombie : MonoBehaviour
         navAgentScript = GetComponent<NavAgentExample>();
         collider = GetComponent<CapsuleCollider>();
         audioSource = GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
     {
-        //audioSource.playOnAwake = true;
+        audioSource.playOnAwake = true;
         audioSource.loop = true;
         audioSource.clip = growl;
         audioSource.Play();
     }
 
+    private void Update()
+    {
+        float maxDistance = 20;
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        float volume = Mathf.Clamp01(1f - (distance / maxDistance));
+        audioSource.volume = volume;
+    }
+    
     public void ChangeSX(AudioClip clipToPlay)
     {
-        audioSource.playOnAwake = false;
         audioSource.loop = false;
         audioSource.clip = clipToPlay;
         audioSource.Play();
@@ -58,7 +67,6 @@ public class Zombie : MonoBehaviour
         else
         {
             animator.Play("TakeHit");
-            ChangeSX(run);
             navAgent.ResetPath();
             navAgent.SetDestination(playerObj.position);
         }
