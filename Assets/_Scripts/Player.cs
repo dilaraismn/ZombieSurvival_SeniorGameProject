@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     [SerializeField] private AudioClip walkSFX;
     [SerializeField] private AudioClip shootSFX, healthKitSFX, bulletKitSFX, chestSFX;
     
-    public int bulletCount = 50;
+    public int bulletCount = 100;
     public float playerHealth = 100;
     
     public bool canShoot = true; //TODO
