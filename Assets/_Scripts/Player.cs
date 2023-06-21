@@ -28,6 +28,10 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject chestOpen, chestClosed;
         
     [SerializeField] private Camera playerCamera;
+
+    [Header("AUDIO CLIPS")] 
+    [SerializeField] private AudioClip walkSFX;
+    [SerializeField] private AudioClip shootSFX;
     
     public int bulletCount = 50;
     public float playerHealth = 100;
@@ -37,12 +41,16 @@ public class Player : MonoBehaviour
     private bool isFlashLightOpen = false;
     private bool isAntidoteTaken = false;
 
+    private AudioSource _audioSource;
+    
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
         }
+
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -56,6 +64,15 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButton(0) && canShoot)
         {
             Shoot();
+            _audioSource.clip = shootSFX;
+            _audioSource.loop = true;
+            _audioSource.pitch = 1;
+            _audioSource.volume = .4f;
+            _audioSource.Play();
+        }
+        else if (Input.GetMouseButtonUp(0))
+        {
+            _audioSource.Stop();
         }
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -75,6 +92,19 @@ public class Player : MonoBehaviour
             takeQuest.SetActive(false);
             questUI.SetActive(true);
             quest1.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            _audioSource.clip = walkSFX;
+            _audioSource.loop = true;
+            _audioSource.pitch = .5f;
+            _audioSource.volume = .2f;
+            _audioSource.Play();
+        }
+        else if (Input.GetKeyUp(KeyCode.W))
+        {
+            _audioSource.Stop();
         }
     }
 
