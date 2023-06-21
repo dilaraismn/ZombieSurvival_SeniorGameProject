@@ -42,6 +42,29 @@
         <e p="Editor" t="Include">
           <e p="AIWaypointNetworkEditor.cs" t="Include" />
         </e>
+        <e p="Elena" t="Include">
+          <e p="_elena" t="Include">
+            <e p="Model" t="Include">
+              <e p="Materials" t="Include">
+                <e p="Hair Shader" t="Include">
+                  <e p="CGIncludes" t="Include">
+                    <e p="UnityAnisotropicBRDF.cginc" t="Include" />
+                    <e p="UnityAnisotropicCommon.cginc" t="Include" />
+                    <e p="UnityAnisotropicCore.cginc" t="Include" />
+                    <e p="UnityAnisotropicCoreForward.cginc" t="Include" />
+                    <e p="UnityAnisotropicCoreForwardSimple.cginc" t="Include" />
+                    <e p="UnityAnisotropicInput.cginc" t="Include" />
+                    <e p="UnityAnisotropicLighting.cginc" t="Include" />
+                    <e p="UnityAnisotropicMeta.cginc" t="Include" />
+                    <e p="UnityAnisotropicShadow.cginc" t="Include" />
+                    <e p="UnityTranslucentLighting.cginc" t="Include" />
+                  </e>
+                  <e p="ElenasHairShaderNormal.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+          </e>
+        </e>
         <e p="FXVille_BloodPack" t="Include">
           <e p="Editor" t="Include">
             <e p="CustomMaterialEditor.cs" t="Include" />
